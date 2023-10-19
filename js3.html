@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+</head>
+    <style>
+        .prueba { background-color: red; 
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#prueba').click(function(){
+                // con esta funcion agrega la clase prueba al objeto 
+                $('#prueba').addClass('prueba');
+            });
+            $('#prueba2').click(function(){
+                // con esta funcion remueve la clase prueba al objeto
+                $('#prueba2').removeClass('prueba');
+            });
+            $('#prueba3').click(function(){
+                // la funcion toggleClass lo que hace es detectar o agregar la clase
+                $('#prueba3').toggleClass("prueba");
+                
+                if($("#prueba3").hasClass("prueba")){
+                    $("#prueba3").text(" Cambie a rojo");
+                } else {
+                    $("#prueba3").text(" Regresa a dar Click");
+                }
+            });
+        });
+    </script>    
+<body>
+    <div id="prueba"> Dar Click </div>
+    <div id="prueba2" class="prueba"> Dar Click</div>
+    <div id="prueba3"> Dar Click</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+</head>
+<script>
+    $(document).ready(function(){
+        alert("Pausa");
+       
+        $("#prueba").html("<b>Hola Alumnos</b>");
+        var contenido = $("#prueba").html();
+        alert(contenido);
+        
+        // con la funcion attr se le agrega un atributo en este caso se le agrega class
+        $("#prueba2").attr("class","demo");
+        // a la variable clase se le asigna el valor de la funcion attr
+        var clase = $("#prueba2").attr("class");
+        alert(clase);
+
+    //    al objeto id1 hay que asignarle el value con Pancho
+        $("#id1").attr("value","Pancho");
+    }); 
+</script>
+<body>
+    <script>
+
+    </script>
+
+    <p id="prueba"><strong>Hola TIC</strong></p>
+    <div id="prueba2"></div>
+    <input type="text" id="id1" name="id1" value="Lorena">
+    
+</body>
+</html>

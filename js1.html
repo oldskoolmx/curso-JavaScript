@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            alert("PARA");
+            $('div.prueba article p').css({
+                'background-color': '#000',
+            });
+            $('div#prueba article#demo p').text("prueba de demo");
+            $('#p2, .p4').text("selectores por separado");
+        });
+    </script>
+    <div class="prueba">
+        <article>
+            <p id="p1">Hola mundo</p>
+        </article>
+    </div>
+    <div id="prueba">
+        <article>
+            <p id="p2">Hola Alumnos</p>
+        </article>
+        <article id="demo">
+            <p id="p3">Hola Alumnos</p>
+        </article>
+    </div>
+    <p class="p4">Hola Alumnos</p>
+</body>
+</html>
