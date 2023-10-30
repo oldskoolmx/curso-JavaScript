@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            console.log($('#primero').next().text());
+            
+            // vete al objeto textto y quiero que te vayas a su padre y ya que estes en padre obten el atributo id 
+            console.log($('#test').parent().attr('id'));
+            
+            // vete al objeto padre y obten el hijo, ya que estes en el hijo obten el atributo id
+            console.log($('#padre').children().attr('id'));
+
+           // vete a la etiqueta ul y luego busca el elemento li
+           //has un recorrido sobre todas las etiquetas li 
+           // en las cuales a cada una le vas a asignar un indice, en la variable elemento va a ir guardando el indice 
+            $('ul li').each(function(index,elemento){
+                console.log("Este elemento numero " +index + " contiene " +$(elemento).text());
+            });
+        });
+    </script>
+    <div>
+        <article id="padre">
+            Hey !! :D
+            <div id="test"> Soy el Hijo </div> 
+        </article>
+    </div>
+    <ul>
+        <li id="primero"> Soy el primero </li>
+        <li> Soy el que sigue</li>
+        <li> Ultimo de la Lista</li>
+    </ul>
+</body>
+</html>

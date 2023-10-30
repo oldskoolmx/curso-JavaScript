@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+</head>
+ <script>
+    $(document).ready(function(){
+        $('#evalua').click(function(){
+            // con la funcion val() le asigna a la nom lo que tiene value
+            var nom = $('#nombre').val();
+            alert(nom);
+            if (nom != 'Carlos') {
+            $("#edad").attr('value', 20);
+            } else {
+                $("#edad").attr('value',15);
+            }
+
+        });
+    });
+</script> 
+<body>
+
+    Nombre <input type="text" name="nombre" id="nombre" value="Carlos">
+    <br>
+    <button id="evalua"> Evaluar</button>
+    <br>
+    Edad <input type="text" name="edad" id="edad" value="">
+    
+</body>
+</html>

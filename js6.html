@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+           
+            $('#prueba').on('click', function(){
+
+                var arreglo = ['joel','herrera','cruz'];
+                $.each(arreglo, function(indice,valor){
+                    if(arreglo[indice] == 'cruz'){
+                        console.log('elemento ' + indice + ' valor ' + valor);
+                    }
+                });
+            });
+            
+            $('#prueba2').on('click', function(){
+
+                // declaramos una variable llamda arreglo y le ponemos tres valores 
+                var arreglo = ['joel','herrera','cruz'];
+                // inarray busca un valor dentro de un arreglo, si lo encuentra manda la posocion del arreglo y si no lo encuentra manda -1
+                if ($.inArray('cruzeeee', arreglo)!==-1)
+                console.log(arreglo[$.inArray('cruz', arreglo)]);
+                else 
+                console.log(" No se encuentra");
+            }); 
+            
+            
+            
+            $('#prueba3').on('click', function(){
+                var s = ' Hola    mundo   ';
+                
+                // con la funcion trim se quitan todos los espacios antes de la variable y despues 
+                console.log($.trim(s));
+            });
+        });
+    </script>
+
+    <button id="prueba">Ejecutar</button>
+    <button id="prueba2">Ejecutar</button>
+    <button id="prueba3">Ejecutar</button>
+</body>
+</html>
