@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() { 
+            var nombreCaja;
+            var v = 0;
+           
+            $('#a').on('click', function(){
+                nombreCaja = 'pancho';
+                $('#nombre').attr('value', nombreCaja);
+            });
+
+            //cuando yo pase el mouse por arriba del objeto nombre voy a cambiar la propiedad value y le pongo joel    
+           /*  $('#nombre').mouseover(function(){
+                //poner this es lo mismo a poner #nombre
+                $(this).attr('value','joel');
+                });
+
+            $('#nombre').on('mouseout', function(){
+                $(this).attr('value',nombreCaja);
+
+            });  */
+
+            $('#nombre').on({
+                'mouseover':function(){
+                    v++;
+                    $(this).attr('value','joel');
+            },'mouseout':function(){
+                $(this).attr('value',nombreCaja);
+                if(v>=3)
+                $(this).off('mouseover');
+            }
+        }); 
+
+           
+
+           /*  $('#a').on('click', function(){
+                nombreCaja = 'pancho';
+                $('#nombre').attr('value',nombreCaja);
+            }); */
+
+        });
+
+
+    
+
+    </script>
+    <button id="a">Click</button>
+    Nombre <input type="text" name="nombre" id="nombre">
+    <div id="caja"></div>
+    
+</body>
+</html>

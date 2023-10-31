@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            $('#c1').on('cambioxyz', function(){
+                if(this.checked){
+                    $('#c1').removeAttr('checked');
+                    $('.cambiar').text('Encender');
+                } else{
+                    $('#c1').attr('checked','checked');
+                    $('.cambiar').text('Apagado');
+                }
+
+            });
+            $('.cambiar').on('click', function(){
+                $('#c1').trigger('cambioxyz');
+
+            });
+
+        });
+
+        
+    </script>
+        <input type="checkbox" id="c1" checked="checked">
+        <button class="cambiar">Apagado</button>    
+</body>
+</html>
